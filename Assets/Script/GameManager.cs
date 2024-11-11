@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> locations = new List<GameObject>();
     [SerializeField] Transform player;
+
     float floorLength = 106.3f;
     float length = 106.3f;
     int floorCount = 4;
+    [SerializeField] GameObject shield;
+
 
 
     // Start is called before the first frame update
@@ -20,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             GenerateLocation();
         }
+        GenerateObject();
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             GenerateLocation();
         }
+
     }
 
     public void RestartGame()
@@ -36,10 +42,26 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void HomePage()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     void GenerateLocation()
     {
         Instantiate(locations[Random.Range(0, locations.Count)], transform.forward * floorLength , transform.rotation);
         floorLength += 106.3f;
     }
+
+    void GenerateObject()
+    {
+        float distance = Random.Range(100, 200);
+        Instantiate(shield, player.position + new Vector3(0,2,distance), transform.rotation);
+        Invoke("GenerateObject", Random.Range(20,30));
+    }
+
+
+
+
 
 }
