@@ -10,6 +10,7 @@ TagManager:
   - blueGems
   - redGems
   - Shield
+  - player
   layers:
   - Default
   - TransparentFX

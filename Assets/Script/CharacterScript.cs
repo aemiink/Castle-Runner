@@ -5,17 +5,17 @@ using TMPro;
 
 public class CharacterScript : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
+    Rigidbody rb;
+    Animator anim;  
     [SerializeField] float speed;
     [SerializeField] float shift;  
     [SerializeField] float jumpForce;  
-    [SerializeField] Animator anim;  
     public bool isGameOver;
     [SerializeField] GameObject menu;
     [SerializeField] TMP_Text score;
     public TMP_Text gems, gems2;
     public float roundScore;
-    public int gemsNum;
+    public float gemsNum;
     float gamePoint = 0f;
     float goldPoints = 5f;
     float redPoints = 7f;
@@ -25,8 +25,23 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] TMP_Text gamePointBox;
 
     void Start()
-    {              
-    }     
+    {   
+        rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+
+        if (PlayerPrefs.HasKey("Coins"))
+        {
+            GetGems();
+        }
+
+    } 
+
+    public void GetGems()
+    {
+        gems2.text = PlayerPrefs.GetInt("Coins").ToString();    
+    }
+
+
     void Update() 
     {     
         if (!isGameOver)
@@ -60,8 +75,6 @@ public class CharacterScript : MonoBehaviour
         else
         {
             EndGameCalculate();
-            gems2.text =  gemsNum.ToString(); 
-
         }              
     }
     void FixedUpdate()

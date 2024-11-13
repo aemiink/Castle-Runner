@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9130936752204844946}
   - component: {fileID: 9130936752203877714}
   - component: {fileID: 2980972571924836648}
+  - component: {fileID: 3533195945772074750}
   m_Layer: 0
   m_Name: RedGem
   m_TagString: redGems
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3095818, y: 0.8331413, z: 2.1965425}
   m_Center: {x: 0.00000017881393, y: -0.00000043213362, z: 0.11594777}
+--- !u!114 &3533195945772074750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130936752201618322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdb2fbc0afe46e49a42cd9285239953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueGems: 2

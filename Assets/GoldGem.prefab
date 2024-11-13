@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3922021556053678499}
   - component: {fileID: 3922021556054678371}
   - component: {fileID: 5611846665791675510}
+  - component: {fileID: 4233254279747351511}
   m_Layer: 0
   m_Name: GoldGem
   m_TagString: goldGems
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3095818, y: 0.8331413, z: 2.1965425}
   m_Center: {x: 0.00000017881393, y: -0.00000043213362, z: 0.11594777}
+--- !u!114 &4233254279747351511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922021556056933795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdb2fbc0afe46e49a42cd9285239953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueGems: 1
