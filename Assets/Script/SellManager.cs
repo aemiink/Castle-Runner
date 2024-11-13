@@ -6,11 +6,24 @@ using UnityEngine.UI;
 public class SellManager : MonoBehaviour
 {
 
-    [Header("Lists")]
+    [Header("Img")]
     [SerializeField] Image alien;
     [SerializeField] Image survival;    
     [SerializeField] Image survivalGirl;    
     [SerializeField] Image astronout;
+
+    [Header("Purchased Img")]
+    [SerializeField] GameObject pruchasedAlien;
+    [SerializeField] GameObject pruchasedSurvival;    
+    [SerializeField] GameObject pruchasedSurvivalGirl;    
+    [SerializeField] GameObject pruchasedAstronout;
+
+    [Header("Destroy Objects")]
+    [SerializeField] GameObject alienObjects;
+    [SerializeField] GameObject survivalObjects;    
+    [SerializeField] GameObject survivalGirlObjects;    
+    [SerializeField] GameObject astronoutObjects;
+    
 
     [Header("Character Price")]
     int alienPrice = 500;
@@ -28,20 +41,25 @@ public class SellManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         if (PlayerPrefs.HasKey("Coins"))
         {
             moneyAmount = PlayerPrefs.GetInt("Coins");
         }
+        */
+         moneyAmount = 3000;
     }
 
     public void alienPurchasing()
     {
         if (moneyAmount >= alienPrice)
         {
+            
             moneyAmount -= alienPrice;
-            PlayerPrefs.SetInt("Coins", moneyAmount);
+            //PlayerPrefs.SetInt("Coins", moneyAmount);
             characters.Add(alien);
-            Destroy(alien);
+            alienObjects.SetActive(false);
+            pruchasedAlien.SetActive(true);
         } 
 
     }
@@ -51,9 +69,10 @@ public class SellManager : MonoBehaviour
         if (moneyAmount >= survivalPrice)
         {
             moneyAmount -= survivalPrice;
-            PlayerPrefs.SetInt("Coins", moneyAmount);
+             //PlayerPrefs.SetInt("Coins", moneyAmount);
             characters.Add(survival);
-            Destroy(survival);
+            survivalObjects.SetActive(false);
+            pruchasedSurvival.SetActive(true);
         } 
     }
 
@@ -62,9 +81,10 @@ public class SellManager : MonoBehaviour
         if (moneyAmount >= survivalGirlPrice)
         {
             moneyAmount -= survivalGirlPrice;
-            PlayerPrefs.SetInt("Coins", moneyAmount);
+             //PlayerPrefs.SetInt("Coins", moneyAmount);
             characters.Add(survivalGirl);
-            Destroy(survivalGirl);
+            survivalGirlObjects.SetActive(false);
+            pruchasedSurvivalGirl.SetActive(true);
         } 
     }
 
@@ -73,9 +93,10 @@ public class SellManager : MonoBehaviour
         if (moneyAmount >= astronoutPrice)
         {
             moneyAmount -= astronoutPrice;
-            PlayerPrefs.SetInt("Coins", moneyAmount);
+             //PlayerPrefs.SetInt("Coins", moneyAmount);
             characters.Add(astronout);
-            Destroy(astronout);
+            astronoutObjects.SetActive(false);
+            pruchasedAstronout.SetActive(true);
         } 
     }
 
